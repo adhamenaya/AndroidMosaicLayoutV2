@@ -76,7 +76,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void create_pattern_mix1() {
+    public void create_pattern_mix2() {
         PatternHelper helper = new PatternHelper();
         Pattern[] patterns = {VERTICAL, VERTICAL, SMALL, SMALL, SMALL, SMALL};
         try {
@@ -85,6 +85,43 @@ public class ExampleUnitTest {
             assertEquals(containers.get(0).cells.size(), 2);
             assertEquals(containers.get(1).cells.size(), 2);
             assertEquals(containers.get(3).cells.size(), 1);
+        } catch (Exception ex) {
+
+        }
+    }
+
+    @Test
+    public void create_pattern_1small() {
+        PatternHelper helper = new PatternHelper();
+        Pattern[] patterns = {SMALL};
+        try {
+            List<Container> containers = helper.generate(Arrays.asList(patterns));
+            assertEquals(containers.size(), 8);
+        } catch (Exception ex) {
+
+        }
+    }
+
+    @Test
+    public void create_pattern_1vertical() {
+        PatternHelper helper = new PatternHelper();
+        Pattern[] patterns = {SMALL};
+        try {
+            List<Container> containers = helper.generate(Arrays.asList(patterns));
+            assertEquals(containers.size(), 4);
+        } catch (Exception ex) {
+
+        }
+    }
+
+
+    @Test
+    public void create_pattern_1big() {
+        PatternHelper helper = new PatternHelper();
+        Pattern[] patterns = {SMALL};
+        try {
+            List<Container> containers = helper.generate(Arrays.asList(patterns));
+            assertEquals(containers.size(), 2);
         } catch (Exception ex) {
 
         }
